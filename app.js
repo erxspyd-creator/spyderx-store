@@ -1,7 +1,6 @@
-// ⚠️ رقم الواتساب الخاص بمتجر SPYDERX™ (بدون علامة +، مثال: 213550000000)
-const WHATSAPP_NUMBER = "213550000000";
+const WHATSAPP_NUMBER = "213550000000"; // استبدله برقم واتساب الخاص بك
 
-// 📦 جدول الولايات الجزائرية الـ 58 الكاملة مع أسعار التوصيل (مكتب و منزل)
+// جدول الولايات الـ 58 مع أسعار التوصيل للمكتب (desk) والمنزل (home)
 const wilayasData = [
     { id: 1, name: "01 - أدرار", desk: 900, home: 1200 },
     { id: 2, name: "02 - الشلف", desk: 500, home: 700 },
@@ -63,64 +62,22 @@ const wilayasData = [
     { id: 58, name: "58 - إن قزام", desk: 1000, home: 1400 }
 ];
 
-// 🕸️ منتجات SPYDERX™ الأساسية
+// قائمة المنتجات (يمكنك التحكم في الأسعار، الكمية، والمقاسات من هنا)
 let products = [
     {
         id: 1,
-        name: "SPYDERX Heavyweight Gothic Hoodie",
-        category: "Hoodies",
-        price: 4500,
-        oldPrice: 5200,
+        name: "Night Cargo Pants",
+        category: "Cargo",
+        price: 6900,
+        oldPrice: null,
         image: "https://i.postimg.cc/k4r7XM2q/file-00000000a73481f489f0e5f55cc0c8b0.png",
-        description: "هودي ثقيل بقطن عالي الجودة، قصة Oversized مع تصميم عنكبوت قوطي مطرز بدقة.",
-        isNew: true,
-        isSale: true,
+        stock: 10,
         sizes: ["S", "M", "L", "XL", "XXL"],
-        outOfStockSizes: ["XXL"],
-        colors: ["Black", "Dark Purple"],
+        outOfStockSizes: [],
+        colors: ["Black"],
         outOfStockColors: []
     },
     {
         id: 2,
-        name: "SPIDBRICK Custom Star Baggy Jeans",
-        category: "Jeans",
-        price: 4800,
-        oldPrice: 5500,
-        image: "https://i.postimg.cc/k4r7XM2q/file-00000000a73481f489f0e5f55cc0c8b0.png",
-        description: "جينز واسع بطابع الستريت وير، مطبوع بتفاصيل نجوم وعناكب داكنة.",
-        isNew: true,
-        isSale: false,
-        sizes: ["30", "32", "34", "36"],
-        outOfStockSizes: ["36"],
-        colors: ["Washed Black", "Gothic Blue"],
-        outOfStockColors: ["Gothic Blue"]
-    }
-];
-
-let cart = [];
-let favorites = [];
-let currentFilter = 'all';
-let selectedProduct = null;
-let activeSize = '';
-let activeColor = '';
-
-document.addEventListener('DOMContentLoaded', () => {
-    renderProducts();
-    initWilayas();
-    updateBadges();
-});
-
-function initWilayas() {
-    const select = document.getElementById('orderWilaya');
-    if (!select) return;
-    select.innerHTML = '';
-    wilayasData.forEach(w => {
-        select.innerHTML += `<option value="${w.name}" data-desk="${w.desk}" data-home="${w.home}">${w.name}</option>`;
-    });
-    updateShippingPrices();
-}
-
-function updateShippingPrices() {
-    const select = document.getElementById('orderWilaya');
-    const deliveryTypeSelect = document.getElementById('orderDeliveryType');
-    if (!select || !deliveryTypeSelect) return
+        name: "Shadow Utility Cargo",
+        category: "Cargo",
