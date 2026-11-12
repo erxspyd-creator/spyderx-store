@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPYDERX™ | WEAR THE DARKNESS</title>
+    <meta name="description" content="متجر SPYDERX™ لملابس الستريت وير في الجزائر. توصيل لـ 58 ولاية والدفع عند الاستلام.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="brand-logo">SPYDER<span>X</span>™ 🕷️</a>
+        <div class="header-actions">
+            <button class="icon-btn" onclick="openFavModal()" title="المفضلة">
+                ❤️ <span class="badge" id="favCount">0</span>
+            </button>
+            <button class="icon-btn" onclick="openCartModal()" title="سلة المشتريات">
+                🛒 <span class="badge" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-tag">NEW DROP 2026 • ALGERIA 🇩🇿</div>
+        <h1>WEAR THE DARKNESS</h1>
+        <p>تشكيلة ستريت وير حصرية بتصاميم قوطية وخامات ثقيلة. توصيل سريع لجميع الولايات الـ 58 مع الدفع عند الاستلام.</p>
+        <button class="cta-btn" onclick="document.getElementById('shopSection').scrollIntoView({behavior: 'smooth'})">
+            تسوق التشكيلة الآن
+        </button>
+    </section>
+
+    <!-- Search & Filters -->
+    <section class="controls-section" id="shopSection">
+        <div class="search-filter-row">
+            <input type="text" id="searchInput" class="search-input" placeholder="ابحث عن منتج (هودي، باغـي، جينز...)" oninput="applyFilters()">
+            
+            <select id="sizeFilter" class="filter-select" onchange="applyFilters()">
+                <option value="all">كل المقاسات</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+
+            <select id="sortFilter" class="filter-select" onchange="applyFilters()">
+                <option value="default">الترتيب الافتراضي</option>
+                <option value="price-asc">السعر: من الأقل للأعلى</option>
+                <option value="price-desc">السعر: من الأعلى للأقل</option>
+            </select>
+        </div>
+
+        <!-- Categories -->
+        <div class="categories-bar" id="categoriesBar">
+            <button class="cat-pill active" onclick="selectCategory('all', this)">الكل</button>
+            <button class="cat-pill" onclick="selectCategory('Hoodies', this)">Hoodies</button>
+            <button class="cat-pill" onclick="selectCategory('Sweatpants', this)">Sweatpants</button>
+            <button class="cat-pill" onclick="selectCategory('Jeans', this)">Jeans</button>
+            <button class="cat-pill" onclick="selectCategory('Cargo', this)">Cargo</button>
+            <button class="cat-pill" onclick="selectCategory('Jackets', this)">Jackets</button>
+            <button class="cat-pill" onclick="selectCategory('T-Shirts', this)">T-Shirts</button>
+            <button class="cat-pill" onclick="selectCategory('Accessories', this)">Accessories</button>
+        </div>
+    </section>
+
+    <!-- Main Products Grid -->
+    <main class="container">
+        <h2 class="section-heading">التشكيلة المتوفرة 🕸️</h2>
+        <div class="products-grid" id="productsGrid"></div>
+
+        <!-- Delivery & Payment Info -->
+        <div class="trust-bar">
+            <div class="trust-item">
+                <h4>🚚 توصيل لـ 58 ولاية</h4>
+                <p>توصيل سريع إلى باب المنزل أو إلى مكتب شركة الشحن (Stop Desk) في جميع ولايات الجزائر.</p>
+            </div>
+            <div class="trust-item">
+                <h4>💵 الدفع عند الاستلام</h4>
+                <p>لا حاجة للدفع المسبق، ادفع ثمن طلبيتك نقداً عند استلامها والتأكد منها.</p>
+            </div>
+            <div class="trust-item">
+                <h4>🔄 إمكانية الاستبدال</h4>
+                <p>نضمن لك حق استبدال المقاس في حال عدم ملاءمته وفق شروط المتجر.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Product Details Modal -->
+    <div class="overlay" id="productModal">
+        <div class="modal-box">
+            <div class="modal-top">
+                <h3 id="pmTitle">اسم المنتج</h3>
+                <button class="close-modal" onclick="closeModal('productModal')">&times;</button>
+            </div>
+            <img id="pmImage" src="" alt="" style="width:100%; height:280px; object-fit
