@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>SPIDBRICK — WEAR THE DARKNESS</title>
+<title>SPYDERX — WEAR THE DARKNESS</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ctext y='8' font-size='9'%3E🕷%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
 <style>
@@ -69,29 +69,38 @@ footer{text-align:center;padding:24px 12px;font-size:.85rem;border-top:1px solid
 footer a{margin:0 8px;cursor:pointer}
 #toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--wh);color:#000;padding:8px 18px;border-radius:20px;z-index:50;display:none;font-weight:700}
 .warn{background:#3b1020;border:1px solid #e11d48;border-radius:10px;padding:10px;margin-bottom:12px;color:#fecdd3}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+#wl{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:20px;background:radial-gradient(circle at 50% 30%,var(--pu2),var(--pu) 50%,var(--bg));transition:opacity .6s,visibility .6s}
+#wl.hide{opacity:0;visibility:hidden}
+#wl:before{content:"";position:absolute;inset:0;opacity:.2;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Cg stroke='%23C0C0C8' fill='none' stroke-width='.4'%3E%3Cpath d='M0 0L50 0M0 0L35 35M0 0L0 50M0 0L-35 35M0 0L-50 0M0 0L-35 -35M0 0L0 -50M0 0L35 -35'/%3E%3Ccircle r='12'/%3E%3Ccircle r='24'/%3E%3Ccircle r='38'/%3E%3C/g%3E%3C/svg%3E") center/cover}
+#wl>*{position:relative}
+#wl h1{font-family:UnifrakturCook,serif;font-size:3.6rem;letter-spacing:3px}
+#wl p{letter-spacing:5px;font-size:.9rem;margin-bottom:18px}
+.drop{animation:dr 2.2s ease-in-out infinite alternate}
+@keyframes dr{from{transform:translateY(-16px)}to{transform:translateY(6px)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<div id="wl"><svg class="drop" width="90" height="150" viewBox="0 0 40 70" fill="none" stroke="#C0C0C8" stroke-width="1.4" stroke-linecap="round"><path d="M20 -20V28"/><g transform="translate(0,22)"><ellipse cx="20" cy="22" rx="6" ry="8" fill="#8b5cf6"/><circle cx="20" cy="12" r="4" fill="#C0C0C8"/><path d="M14 18L3 10M14 22L2 22M14 26L4 36M26 18L37 10M26 22L38 22M26 26L36 36"/></g></svg><h1>SPYDERX</h1><p>WEAR THE DARKNESS</p><button class="btn" id="wb" onclick="enter()"></button></div>
 <header>
- <div class="logo" onclick="go('home')" role="button" aria-label="SPIDBRICK">
+ <div class="logo" onclick="go('home')" role="button" aria-label="SPYDERX">
   <svg width="30" height="30" viewBox="0 0 40 40" fill="none" stroke="#C0C0C8" stroke-width="2" stroke-linecap="round"><ellipse cx="20" cy="22" rx="6" ry="8" fill="#8b5cf6"/><circle cx="20" cy="12" r="4" fill="#C0C0C8"/><path d="M14 18L3 10M14 22L2 22M14 26L4 36M26 18L37 10M26 22L38 22M26 26L36 36"/></svg>
-  <span>Spidbrick</span></div>
+  <span>Spyderx</span></div>
  <button class="ib" onclick="$('sb').classList.toggle('on');$('q').focus()" aria-label="search">🔍</button>
  <button class="ib" id="lg" onclick="setLang()"></button>
 </header>
 <div id="sb"><input id="q" oninput="Q=this.value;go('shop')"></div>
 <main id="app"></main>
-<footer><div style="font-family:UnifrakturCook,serif;font-size:1.4rem;color:#fff">Spidbrick</div><div id="fl"></div><div style="margin-top:8px"><a onclick="go('size')" id="f1"></a><a onclick="go('faq')" id="f2"></a><a onclick="go('about')" id="f3"></a><a onclick="go('contact')" id="f4"></a><a onclick="go('admin')" id="f5" style="opacity:.5"></a></div><div style="margin-top:8px">© SPIDBRICK</div></footer>
+<footer><div style="font-family:UnifrakturCook,serif;font-size:1.4rem;color:#fff">Spyderx</div><div id="fl"></div><div style="margin-top:8px"><a onclick="go('size')" id="f1"></a><a onclick="go('faq')" id="f2"></a><a onclick="go('about')" id="f3"></a><a onclick="go('contact')" id="f4"></a><a onclick="go('admin')" id="f5" style="opacity:.5"></a></div><div style="margin-top:8px">© SPYDERX</div></footer>
 <a class="wa" id="wab" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.300 1.200-1.800 1.200-.5.1-1 .2-3.200-.7-2.700-1.100-4.400-3.800-4.500-4-.1-.2-1.100-1.400-1.100-2.700s.7-1.900.9-2.200c.2-.2.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .5l-.4.600c-.1.200-.3.300-.1.600.7 1.100 1.500 1.800 2.600 2.400.3.200.5.100.6-.1l.8-1c.2-.2.400-.2.600-.1l1.900.9c.2.100.4.200.4.300.1.200.1.700-.2 1.300z"/></svg></a>
 <nav id="nv"></nav>
 <div id="toast"></div>
 <script>
 /* ====== CONFIG: change the WhatsApp number (international format, no +) and Instagram link ====== */
-const WA='213550000000',IG='https://instagram.com/spidbrick',ADMIN_PW='spid2026';
+const WA='213550000000',IG='https://instagram.com/spyderx',ADMIN_PW='spid2026';
 const $=id=>document.getElementById(id);
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const FB="data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><rect width="400" height="500" fill="#160B2B"/><path d="M0 0L400 500M400 0L0 500M200 0V500M0 250H400" stroke="#2a1550" fill="none"/><text x="200" y="260" fill="#C0C0C8" font-size="30" text-anchor="middle" font-family="serif">SPIDBRICK</text></svg>');
+const FB="data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><rect width="400" height="500" fill="#160B2B"/><path d="M0 0L400 500M400 0L0 500M200 0V500M0 250H400" stroke="#2a1550" fill="none"/><text x="200" y="260" fill="#C0C0C8" font-size="30" text-anchor="middle" font-family="serif">SPYDERX</text></svg>');
 const U=i=>'https://images.unsplash.com/photo-'+i+'?auto=format&fit=crop&w=800&q=80';
 const img=(s,c)=>'<img src="'+esc(s)+'" alt="" loading="lazy" class="'+(c||'')+'" onerror="this.onerror=null;this.src=FB">';
 const ld=(k,d)=>{try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}};
@@ -108,14 +117,14 @@ const CATS=['hoodies','jeans','jackets','cargos','pants'];
 const WIL="Adrar,Chlef,Laghouat,Oum El Bouaghi,Batna,Béjaïa,Biskra,Béchar,Blida,Bouira,Tamanrasset,Tébessa,Tlemcen,Tiaret,Tizi Ouzou,Alger,Djelfa,Jijel,Sétif,Saïda,Skikda,Sidi Bel Abbès,Annaba,Guelma,Constantine,Médéa,Mostaganem,M'Sila,Mascara,Ouargla,Oran,El Bayadh,Illizi,Bordj Bou Arréridj,Boumerdès,El Tarf,Tindouf,Tissemsilt,El Oued,Khenchela,Souk Ahras,Tipaza,Mila,Aïn Defla,Naâma,Aïn Témouchent,Ghardaïa,Relizane,El M'Ghair,El Meniaa,Ouled Djellal,Bordj Badji Mokhtar,Béni Abbès,Timimoun,Touggourt,Djanet,In Salah,In Guezzam".split(',');
 const SOUTH=[1,8,11,30,32,33,37,39,45,47,49,50,51,52,53,54,55,56,57,58];
 const fee=n=>n==16||n==19?600:SOUTH.includes(n)?1000:800;
-const T={ar:{home:'الرئيسية',cats:'الفئات',shop:'المنتجات',cart:'السلة',s:'ابحث عن منتج...',add:'أضف للسلة',all:'الكل',nw:'وصل حديثاً',bs:'الأكثر مبيعاً',slogan:'WEAR THE DARKNESS',hs:'تسوّق الآن',fc:'المجموعة المميزة',fcd:'هوديات ثقيلة وجينز واسع وجاكيتات قوطية',promo:'توصيل لـ 58 ولاية — الدفع عند الاستلام',ig:'تابعنا على إنستغرام',cur:'د.ج',hoodies:'هوديات',jeans:'جينز',jackets:'جاكيتات',cargos:'كارغو',pants:'سراويل',newest:'الأحدث',pa:'السعر: الأقل',pd:'السعر: الأعلى',size:'المقاس',color:'اللون',ins:'متوفر',out:'نفد المخزون',empty:'السلة فارغة',back:'رجوع',sub:'المجموع الفرعي',fee:'رسوم التوصيل',total:'الإجمالي',co:'إتمام الطلب',cod:'الدفع عند الاستلام',name:'الاسم الكامل',phone:'رقم الهاتف',wil:'الولاية',pick:'اختر الولاية',com:'البلدية / المدينة',addr:'العنوان الكامل',sum:'ملخص الطلب',submit:'تأكيد الطلب عبر واتساب',e_name:'أدخل اسمك الكامل',e_phone:'رقم جزائري صحيح يبدأ بـ 05 أو 06 أو 07',e_wil:'اختر الولاية',e_com:'أدخل البلدية',e_addr:'أدخل العنوان الكامل',thx:'تم تسجيل طلبك!',thxd:'إذا لم يفتح واتساب تلقائياً اضغط الزر لإرسال الطلب.',sendwa:'إرسال عبر واتساب',sg:'جدول المقاسات (سم)',faq:'الأسئلة الشائعة',about:'عن SPIDBRICK',contact:'اتصل بنا',admin:'إدارة المتجر',added:'تمت الإضافة للسلة',nores:'لا توجد نتائج',cm:['المقاس','الصدر','الطول','الكتف'],
-about_t:'SPIDBRICK علامة ملابس شارع جزائرية داكنة الروح. نصمّم قطعاً ثقيلة بقصّات واسعة لمن يلبس الظلام بفخر.',
+const T={ar:{home:'الرئيسية',cats:'الفئات',shop:'المنتجات',cart:'السلة',s:'ابحث عن منتج...',add:'أضف للسلة',all:'الكل',nw:'وصل حديثاً',bs:'الأكثر مبيعاً',slogan:'WEAR THE DARKNESS',hs:'تسوّق الآن',fc:'المجموعة المميزة',fcd:'هوديات ثقيلة وجينز واسع وجاكيتات قوطية',promo:'توصيل لـ 58 ولاية — الدفع عند الاستلام',ig:'تابعنا على إنستغرام',cur:'د.ج',hoodies:'هوديات',jeans:'جينز',jackets:'جاكيتات',cargos:'كارغو',pants:'سراويل',newest:'الأحدث',pa:'السعر: الأقل',pd:'السعر: الأعلى',size:'المقاس',color:'اللون',ins:'متوفر',out:'نفد المخزون',empty:'السلة فارغة',back:'رجوع',sub:'المجموع الفرعي',fee:'رسوم التوصيل',total:'الإجمالي',co:'إتمام الطلب',cod:'الدفع عند الاستلام',name:'الاسم الكامل',phone:'رقم الهاتف',wil:'الولاية',pick:'اختر الولاية',com:'البلدية / المدينة',addr:'العنوان الكامل',sum:'ملخص الطلب',submit:'تأكيد الطلب عبر واتساب',e_name:'أدخل اسمك الكامل',e_phone:'رقم جزائري صحيح يبدأ بـ 05 أو 06 أو 07',e_wil:'اختر الولاية',e_com:'أدخل البلدية',e_addr:'أدخل العنوان الكامل',thx:'تم تسجيل طلبك!',thxd:'إذا لم يفتح واتساب تلقائياً اضغط الزر لإرسال الطلب.',sendwa:'إرسال عبر واتساب',sg:'جدول المقاسات (سم)',faq:'الأسئلة الشائعة',about:'عن SPYDERX',contact:'اتصل بنا',admin:'إدارة المتجر',added:'تمت الإضافة للسلة',nores:'لا توجد نتائج',cm:['المقاس','الصدر','الطول','الكتف'],
+about_t:'SPYDERX علامة ملابس شارع جزائرية داكنة الروح. نصمّم قطعاً ثقيلة بقصّات واسعة لمن يلبس الظلام بفخر.',
 faqs:[['كم مدة التوصيل؟','من 2 إلى 5 أيام حسب الولاية.'],['كيف أدفع؟','الدفع نقداً عند الاستلام فقط.'],['هل يمكن التبديل؟','نعم خلال 3 أيام من الاستلام إذا كانت القطعة غير ملبوسة.'],['كيف أختار مقاسي؟','راجع جدول المقاسات، والقصّات واسعة (Oversized).']],
-ad_w:'تنبيه: التعديلات تُحفظ في هذا المتصفح فقط (localStorage) ولا تظهر لباقي الزبائن. هذه ليست قاعدة بيانات سحابية.',ad_new:'منتج جديد',save:'حفظ',del:'حذف',edit:'تعديل',cat:'الفئة',price:'السعر',old:'السعر القديم',stock:'المخزون',imgs:'روابط الصور (سطر لكل رابط)',desc:'الوصف',pname:'اسم المنتج',lbl:'الواتساب',cf:'تأكيد الحذف؟',saved:'تم الحفظ',offs:'مقاسات نفدت (اضغط لتعطيل)',offc:'ألوان نفدت (افصل بفاصلة)',exp:'نسخ بيانات المتجر للنشر',copied:'تم النسخ',pw:'كلمة سر الإدارة'},
+ad_w:'تنبيه: التعديلات تُحفظ في هذا المتصفح فقط (localStorage) ولا تظهر لباقي الزبائن. هذه ليست قاعدة بيانات سحابية.',ad_new:'منتج جديد',save:'حفظ',del:'حذف',edit:'تعديل',cat:'الفئة',price:'السعر',old:'السعر القديم',stock:'المخزون',imgs:'روابط الصور (سطر لكل رابط)',desc:'الوصف',pname:'اسم المنتج',lbl:'الواتساب',cf:'تأكيد الحذف؟',saved:'تم الحفظ',offs:'مقاسات نفدت (اضغط لتعطيل)',offc:'ألوان نفدت (افصل بفاصلة)',exp:'نسخ بيانات المتجر للنشر',copied:'تم النسخ',pw:'كلمة سر الإدارة',enter:'ادخل المتجر'},
 fr:{home:'Accueil',cats:'Catégories',shop:'Boutique',cart:'Panier',s:'Rechercher...',add:'Ajouter',all:'Tout',nw:'Nouveautés',bs:'Meilleures ventes',slogan:'WEAR THE DARKNESS',hs:'Acheter',fc:'Collection phare',fcd:'Hoodies lourds, jeans baggy et vestes gothiques',promo:'Livraison dans les 58 wilayas — paiement à la livraison',ig:'Suivez-nous sur Instagram',cur:'DZD',hoodies:'Hoodies',jeans:'Jeans',jackets:'Vestes',cargos:'Cargos',pants:'Pantalons',newest:'Nouveautés',pa:'Prix croissant',pd:'Prix décroissant',size:'Taille',color:'Couleur',ins:'En stock',out:'Rupture de stock',empty:'Panier vide',back:'Retour',sub:'Sous-total',fee:'Livraison',total:'Total',co:'Commander',cod:'Paiement à la livraison',name:'Nom complet',phone:'Téléphone',wil:'Wilaya',pick:'Choisir la wilaya',com:'Commune / Ville',addr:'Adresse complète',sum:'Récapitulatif',submit:'Confirmer via WhatsApp',e_name:'Entrez votre nom complet',e_phone:'Numéro algérien valide (05, 06 ou 07)',e_wil:'Choisissez la wilaya',e_com:'Entrez la commune',e_addr:'Entrez l\'adresse complète',thx:'Commande enregistrée !',thxd:'Si WhatsApp ne s\'ouvre pas, appuyez sur le bouton pour envoyer.',sendwa:'Envoyer par WhatsApp',sg:'Guide des tailles (cm)',faq:'FAQ',about:'À propos',contact:'Contact',admin:'Gestion boutique',added:'Ajouté au panier',nores:'Aucun résultat',noreS:'',cm:['Taille','Poitrine','Longueur','Épaule'],
-about_t:'SPIDBRICK est une marque algérienne de streetwear sombre. Des pièces lourdes, coupes amples, pour ceux qui portent l\'obscurité.',
+about_t:'SPYDERX est une marque algérienne de streetwear sombre. Des pièces lourdes, coupes amples, pour ceux qui portent l\'obscurité.',
 faqs:[['Délai de livraison ?','2 à 5 jours selon la wilaya.'],['Comment payer ?','Paiement en espèces à la livraison uniquement.'],['Échange possible ?','Oui, sous 3 jours si la pièce n\'est pas portée.'],['Quelle taille choisir ?','Voir le guide des tailles ; les coupes sont oversize.']],
-ad_w:'Attention : les modifications sont enregistrées uniquement dans ce navigateur (localStorage), pas dans une base de données partagée.',ad_new:'Nouveau produit',save:'Enregistrer',del:'Supprimer',edit:'Modifier',cat:'Catégorie',price:'Prix',old:'Ancien prix',stock:'Stock',imgs:'URLs des images (une par ligne)',desc:'Description',pname:'Nom du produit',lbl:'WhatsApp',cf:'Confirmer la suppression ?',saved:'Enregistré',offs:'Tailles épuisées (cliquer)',offc:'Couleurs épuisées (virgule)',exp:'Copier les données pour publier',copied:'Copié',pw:'Mot de passe admin'}};
+ad_w:'Attention : les modifications sont enregistrées uniquement dans ce navigateur (localStorage), pas dans une base de données partagée.',ad_new:'Nouveau produit',save:'Enregistrer',del:'Supprimer',edit:'Modifier',cat:'Catégorie',price:'Prix',old:'Ancien prix',stock:'Stock',imgs:'URLs des images (une par ligne)',desc:'Description',pname:'Nom du produit',lbl:'WhatsApp',cf:'Confirmer la suppression ?',saved:'Enregistré',offs:'Tailles épuisées (cliquer)',offc:'Couleurs épuisées (virgule)',exp:'Copier les données pour publier',copied:'Copié',pw:'Mot de passe admin',enter:'Entrer'}};
 let L=ld('sb_l','ar'),P=ld('sb_p',DEF),C=ld('sb_c',[]),V='home',A=null,Q='',CAT='all',SORT='new',IDX=0,EDIT=null,EO=[],ADM=false;
 const t=k=>(T[L][k]!=null?T[L][k]:k);
 const fmt=n=>Number(n).toLocaleString('en-US')+' '+t('cur');
@@ -126,6 +135,7 @@ const colAv=p=>p.colors.filter(c=>!offC(p).includes(c.toLowerCase()));
 const ok=p=>p.stock>0&&sizesAv(p).length>0&&colAv(p).length>0;
 const disc=p=>p.old>p.price?Math.round(100-p.price/p.old*100):0;
 function toast(m){const e=$('toast');e.textContent=m;e.style.display='block';clearTimeout(toast.x);toast.x=setTimeout(()=>e.style.display='none',1800)}
+function enter(){const e=$('wl');if(!e)return;e.classList.add('hide');setTimeout(()=>e.remove(),700);try{sessionStorage.setItem('sb_w','1')}catch(x){}}
 function setLang(){L=L=='ar'?'fr':'ar';sv('sb_l',L);chrome();render()}
 function go(v,a){if(v=='admin'&&!ADM){const w=prompt(t('pw'));if(w!==ADMIN_PW){if(w!==null)toast('✕');return}ADM=true}V=v;A=a==null?null:a;IDX=0;if(v!='shop'&&v!='home')Q='';render();scrollTo(0,0)}
 function cats(){go('home');setTimeout(()=>$('cats')&&$('cats').scrollIntoView(),50)}
@@ -134,7 +144,7 @@ function chrome(){
  $('q').placeholder=t('s');$('lg').textContent=L=='ar'?'FR':'AR';
  $('f1').textContent=t('sg');$('f2').textContent=t('faq');$('f3').textContent=t('about');$('f4').textContent=t('contact');$('f5').textContent=t('admin');
  $('fl').innerHTML='<a href="'+IG+'" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/'+WA+'" target="_blank" rel="noopener">WhatsApp</a>';
- $('wab').href='https://wa.me/'+WA;
+ $('wab').href='https://wa.me/'+WA;if($('wb'))$('wb').textContent=t('enter');
  const n=C.reduce((s,i)=>s+i.q,0),ic={
  home:'<path d="M3 11l9-8 9 8v10h-6v-6H9v6H3z"/>',cats:'<path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z"/>',shop:'<path d="M5 3l-2 4v14h18V7l-2-4zM3 7h18"/>',cart:'<path d="M3 4h3l3 12h10l2-8H7"/><circle cx="10" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/>'};
  $('nv').innerHTML=[['home','go("home")'],['cats','cats()'],['shop','go("shop")'],['cart','go("cart")']].map(([k,f])=>'<button class="'+(V==k?'on':'')+'" onclick=\''+f+'\'><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">'+ic[k]+'</svg>'+t(k==='cats'?'cats':k)+(k=='cart'&&n?'<span class="dot">'+n+'</span>':'')+'</button>').join('');
@@ -148,7 +158,7 @@ function render(){
  const m=$('app');let h='';
  if(V=='home'){
   const nw=P.slice().reverse().slice(0,4),bs=P.filter(p=>disc(p)).slice(0,4);
-  h='<div class="hero"><h1>SPIDBRICK</h1><p>'+t('slogan')+'</p><input style="max-width:360px" placeholder="'+esc(t('s'))+'" oninput="Q=this.value;go(\'shop\')"><br><br><button class="btn" onclick="go(\'shop\')">'+t('hs')+'</button></div>'
+  h='<div class="hero"><h1>SPYDERX</h1><p>'+t('slogan')+'</p><input style="max-width:360px" placeholder="'+esc(t('s'))+'" oninput="Q=this.value;go(\'shop\')"><br><br><button class="btn" onclick="go(\'shop\')">'+t('hs')+'</button></div>'
   +'<div class="box" style="margin-top:12px"><h2>'+t('fc')+'</h2><p>'+t('fcd')+'</p></div>'
   +'<div id="cats" class="sec"><h2>'+t('cats')+'</h2></div>'+pills()
   +'<div class="sec"><h2>'+t('nw')+'</h2></div><div class="grid">'+nw.map(card).join('')+'</div>'
@@ -204,7 +214,7 @@ function order(){
  if(bad){toast('!');return}
  const s=C.reduce((x,i)=>x+(find(i.id)?find(i.id).price*i.q:0),0),f=fee(w),no='SB'+Date.now().toString().slice(-6);
  const lines=C.map(i=>{const q=find(i.id);return '• '+q.name+' | '+i.size+' | '+i.color+' | x'+i.q+' = '+(q.price*i.q)+' DZD'}).join('\n');
- const msg='🕷 SPIDBRICK — طلب جديد / Nouvelle commande #'+no+'\n\n'+lines+'\n\nالمجموع / Sous-total: '+s+' DZD\nالتوصيل / Livraison: '+f+' DZD\nالإجمالي / Total: '+(s+f)+' DZD\n\n👤 '+n+'\n📞 '+p+'\n📍 '+w+' - '+WIL[w-1]+' / '+c+'\n🏠 '+a+'\n💵 الدفع عند الاستلام / Paiement à la livraison';
+ const msg='🕷 SPYDERX — طلب جديد / Nouvelle commande #'+no+'\n\n'+lines+'\n\nالمجموع / Sous-total: '+s+' DZD\nالتوصيل / Livraison: '+f+' DZD\nالإجمالي / Total: '+(s+f)+' DZD\n\n👤 '+n+'\n📞 '+p+'\n📍 '+w+' - '+WIL[w-1]+' / '+c+'\n🏠 '+a+'\n💵 الدفع عند الاستلام / Paiement à la livraison';
  const url='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
  sv('sb_o',ld('sb_o',[]).concat([{no,n,p,w,c,a,total:s+f,date:new Date().toISOString()}]));
  C=[];sv('sb_c',C);go('confirm',url);window.open(url,'_blank');
@@ -219,6 +229,7 @@ function saveP(id){
 }
 function delP(id){if(confirm(t('cf'))){P=P.filter(x=>x.id!=id);C=C.filter(i=>i.id!=id);sv('sb_p',P);sv('sb_c',C);render()}}
 chrome();render();
+try{if(sessionStorage.getItem('sb_w'))$('wl').remove()}catch(e){}
 </script>
 </body>
 </html>
